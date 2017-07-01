@@ -40,8 +40,8 @@ LinePos = DynamicList()
 for path_string in path_strings:
     path_data = parse_path(path_string)
     for point in range(0, 1, int(1 / .001)):
-        x = int(path_data.point(point).real)
-        y = int(path_data.point(point).imag)
+        x = int((path_data.point(point).real)%28) #27 to 7
+        y = int((path_data.point(point).imag)%15) - 14 # -14 to 14
         LinePos[i] = [x, y, z]
         print(LinePos[i])
 i = (i + 1)
