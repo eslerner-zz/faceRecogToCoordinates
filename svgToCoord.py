@@ -35,13 +35,16 @@ class DynamicList(list):
 svg_dom = minidom.parse("C:\Users\Emily\Downloads\Apple\homer-simpson.svg")
 path_strings = [path.getAttribute('d') for path in svg_dom.getElementsByTagName('path')]
 i = 0
-z = 0
 LinePos = DynamicList()
 for path_string in path_strings:
     path_data = parse_path(path_string)
     for point in range(0, 1, int(1 / .001)):
-        x = int((path_data.point(point).real)%28) #27 to 7
-        y = int((path_data.point(point).imag)%15) - 14 # -14 to 14
+        z = 0
+        x = int((path_data.point(point).real)%21) + 7 #27 to 7
+        y = int((path_data.point(point).imag)%29) - 14 # -14 to 14
         LinePos[i] = [x, y, z]
         print(LinePos[i])
+    z = 1
+    LinePos[i] = [x, y, z]
+    print(LinePos[i])
 i = (i + 1)
