@@ -1,4 +1,5 @@
 # Author of PWM file: Tony DiCola
+# Testt
 # License: Public Domain
 from __future__ import division
 import timeo
@@ -12,6 +13,7 @@ import re
 from xml.dom import minidom
 from svg.path import parse_path
 
+test=1
 svg = minidom.parse("C:\Users\Emily\Downloads\Apple\homer-simpson.svg") #change to proper name
 paths = [path.getAttribute('d') for path in svg.getElementsByTagName('path')]
 print(paths)
